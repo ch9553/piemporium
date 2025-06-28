@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Eye, EyeOff } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -17,11 +18,27 @@ const Register = () => {
     confirmPassword: ""
   });
   const navigate = useNavigate();
+  const { toast } = useToast();
 
   const handleRegister = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate registration - in real app, handle user creation
-    navigate("/dashboard");
+    
+    if (formData.password !== formData.confirmPassword) {
+      toast({
+        title: "Password Mismatch",
+        description: "Passwords do not match",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (formData.username && formData.password) {
+      toast({
+        title: "Registration Successful",
+        description: "Welcome to Piemporium!",
+      });
+      navigate("/dashboard");
+    }
   };
 
   const handleInputChange = (field: string, value: string) => {
@@ -33,9 +50,9 @@ const Register = () => {
       {/* Header */}
       <div className="absolute top-0 left-0 right-0 border-b border-white/10 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-sm">π</span>
+          <Link to="/" className="flex items-center space-x-3">
+            <div className="w-12 h-12 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center shadow-lg">
+              <span className="text-white font-bold text-2xl" style={{ fontFamily: 'Times New Roman, serif' }}>π</span>
             </div>
             <span className="text-2xl font-bold text-white">PIEMPORIUM</span>
           </Link>

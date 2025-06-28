@@ -7,17 +7,32 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Eye, EyeOff } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import { useToast } from "@/hooks/use-toast";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const { toast } = useToast();
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate login - in real app, handle authentication
-    navigate("/dashboard");
+    
+    // Demo credentials
+    if (email === "demo@piemporium.com" && password === "demo123") {
+      toast({
+        title: "Login Successful",
+        description: "Welcome to Piemporium!",
+      });
+      navigate("/dashboard");
+    } else {
+      toast({
+        title: "Invalid Credentials",
+        description: "Use demo@piemporium.com / demo123 for demo access",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -25,9 +40,9 @@ const Login = () => {
       {/* Header */}
       <div className="absolute top-0 left-0 right-0 border-b border-white/10 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-sm">π</span>
+          <Link to="/" className="flex items-center space-x-3">
+            <div className="w-12 h-12 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center shadow-lg">
+              <span className="text-white font-bold text-2xl" style={{ fontFamily: 'Times New Roman, serif' }}>π</span>
             </div>
             <span className="text-2xl font-bold text-white">PIEMPORIUM</span>
           </Link>
@@ -46,6 +61,11 @@ const Login = () => {
         <CardHeader className="text-center">
           <CardTitle className="text-2xl text-white">Welcome Back</CardTitle>
           <p className="text-blue-200">Sign in to your account</p>
+          <div className="mt-4 p-3 bg-blue-500/20 rounded-lg border border-blue-400/30">
+            <p className="text-blue-200 text-sm font-medium">Demo Credentials:</p>
+            <p className="text-white text-sm">Email: demo@piemporium.com</p>
+            <p className="text-white text-sm">Password: demo123</p>
+          </div>
         </CardHeader>
         <CardContent className="space-y-6">
           <form onSubmit={handleLogin} className="space-y-4">
@@ -57,6 +77,7 @@ const Login = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="bg-white/10 border-white/20 text-white placeholder:text-white/50"
+                placeholder="demo@piemporium.com"
                 required
               />
             </div>
@@ -70,6 +91,7 @@ const Login = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="bg-white/10 border-white/20 text-white placeholder:text-white/50 pr-10"
+                  placeholder="demo123"
                   required
                 />
                 <button

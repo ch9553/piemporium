@@ -10,9 +10,9 @@ const Index = () => {
       {/* Header */}
       <header className="border-b border-white/10 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-sm">π</span>
+          <div className="flex items-center space-x-3">
+            <div className="w-12 h-12 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center shadow-lg">
+              <span className="text-white font-bold text-2xl" style={{ fontFamily: 'Times New Roman, serif' }}>π</span>
             </div>
             <span className="text-2xl font-bold text-white">PIEMPORIUM</span>
           </div>
@@ -51,7 +51,7 @@ const Index = () => {
               <ArrowRight className="w-8 h-8 text-blue-300" />
             </div>
             <div className="w-20 h-20 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center shadow-2xl">
-              <span className="text-white font-bold text-2xl">π</span>
+              <span className="text-white font-bold text-3xl" style={{ fontFamily: 'Times New Roman, serif' }}>π</span>
             </div>
           </div>
 

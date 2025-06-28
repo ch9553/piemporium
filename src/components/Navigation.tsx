@@ -17,9 +17,9 @@ const Navigation = () => {
     <header className="border-b border-white/10 backdrop-blur-sm bg-slate-900/50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/dashboard" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-sm">π</span>
+          <Link to="/dashboard" className="flex items-center space-x-3">
+            <div className="w-12 h-12 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center shadow-lg">
+              <span className="text-white font-bold text-2xl" style={{ fontFamily: 'Times New Roman, serif' }}>π</span>
             </div>
             <span className="text-2xl font-bold text-white">PIEMPORIUM</span>
           </Link>
