@@ -23,7 +23,7 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
         <div className="text-center">
           <h1 className="text-6xl font-bold bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text text-transparent animate-fade-out" 
               style={{ fontFamily: 'Dancing Script, cursive' }}>
-            EMPORIUM
+            PIEMPORIUM
           </h1>
         </div>
       </div>
@@ -38,7 +38,7 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
               fontFamily: 'Dancing Script, cursive',
               animation: 'fadeIn 2s ease-in-out, textGlow 2s ease-in-out infinite alternate'
             }}>
-          EMPORIUM
+          PIEMPORIUM
         </h1>
         <div className="mt-8 flex justify-center">
           <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-400"></div>

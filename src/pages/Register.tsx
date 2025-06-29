@@ -1,48 +1,16 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Eye, EyeOff } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
-import { useToast } from "@/hooks/use-toast";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-    confirmPassword: ""
-  });
-  const navigate = useNavigate();
-  const { toast } = useToast();
-
-  const handleRegister = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (formData.password !== formData.confirmPassword) {
-      toast({
-        title: "Password Mismatch",
-        description: "Passwords do not match",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    if (formData.username && formData.password) {
-      toast({
-        title: "Registration Successful",
-        description: "Welcome to EMPORIUM!",
-      });
-      navigate("/dashboard");
-    }
-  };
-
-  const handleInputChange = (field: string, value: string) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 flex items-center justify-center p-4">
@@ -50,114 +18,110 @@ const Register = () => {
       <div className="absolute top-0 left-0 right-0 border-b border-white/10 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-4 hover:scale-105 transition-transform duration-300">
-            <div className="bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 rounded-xl p-4 shadow-2xl border border-orange-300/20">
-              <span className="text-white font-bold text-4xl drop-shadow-lg block leading-none" style={{ fontFamily: 'Times New Roman, serif' }}>π</span>
+            <div className="bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 rounded-lg p-3 shadow-2xl border border-orange-400/30">
+              <span className="text-white font-bold text-3xl drop-shadow-lg block leading-none" style={{ fontFamily: 'Times New Roman, serif' }}>π</span>
             </div>
-            <span className="text-3xl font-bold bg-gradient-to-r from-slate-100 via-slate-50 to-slate-200 bg-clip-text text-transparent tracking-wide" 
+            <span className="text-3xl font-bold bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent tracking-wide" 
                   style={{ fontFamily: 'Playfair Display, serif', fontWeight: '700' }}>EMPORIUM</span>
           </Link>
           <div className="flex items-center space-x-4">
             <Link to="/login">
-              <Button variant="outline" className="bg-white/20 border-white/40 text-white hover:bg-white/30 hover:border-white/60 font-semibold transition-all duration-300">
-                Login
+              <Button variant="ghost" className="text-blue-300 hover:text-white">
+                LOGIN
               </Button>
             </Link>
-            <span className="text-orange-300 font-semibold">REGISTER</span>
+            <span className="text-orange-400">Register</span>
           </div>
         </div>
       </div>
 
-      <Card className="w-full max-w-md bg-white/10 border-white/20 backdrop-blur-md shadow-2xl animate-fade-in">
+      <Card className="w-full max-w-md bg-slate-800/30 border-slate-700/50 backdrop-blur-md shadow-2xl animate-fade-in">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl text-white">Join EMPORIUM</CardTitle>
-          <p className="text-blue-200">Create your trading account</p>
+          <CardTitle className="text-2xl text-white">Create Account</CardTitle>
+          <p className="text-blue-200">Join the future of Pi trading</p>
         </CardHeader>
-        <CardContent className="space-y-6">
-          <form onSubmit={handleRegister} className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="username" className="text-white">Username *</Label>
+        <CardContent className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="email" className="text-white">Email Address *</Label>
+            <Input
+              id="email"
+              type="email"
+              className="bg-slate-700/50 border-slate-600/50 text-white placeholder:text-slate-400 focus:ring-2 focus:ring-orange-400"
+              placeholder="your@email.com"
+              required
+            />
+          </div>
+          
+          <div className="space-y-2">
+            <Label htmlFor="username" className="text-white">Username *</Label>
+            <Input
+              id="username"
+              type="text"
+              className="bg-slate-700/50 border-slate-600/50 text-white placeholder:text-slate-400 focus:ring-2 focus:ring-orange-400"
+              placeholder="Choose a username"
+              required
+            />
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="password" className="text-white">Password *</Label>
+            <div className="relative">
               <Input
-                id="username"
-                type="text"
-                value={formData.username}
-                onChange={(e) => handleInputChange("username", e.target.value)}
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:ring-2 focus:ring-orange-400 transition-all duration-300"
+                id="password"
+                type={showPassword ? "text" : "password"}
+                className="bg-slate-700/50 border-slate-600/50 text-white placeholder:text-slate-400 pr-10 focus:ring-2 focus:ring-orange-400"
+                placeholder="Create a strong password"
                 required
               />
-            </div>
-            
-            <div className="space-y-2">
-              <Label htmlFor="email" className="text-white">E-mail Address</Label>
-              <Input
-                id="email"
-                type="email"
-                value={formData.email}
-                onChange={(e) => handleInputChange("email", e.target.value)}
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:ring-2 focus:ring-orange-400 transition-all duration-300"
-              />
-            </div>
-            
-            <div className="space-y-2">
-              <Label htmlFor="password" className="text-white">Password *</Label>
-              <div className="relative">
-                <Input
-                  id="password"
-                  type={showPassword ? "text" : "password"}
-                  value={formData.password}
-                  onChange={(e) => handleInputChange("password", e.target.value)}
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/50 pr-10 focus:ring-2 focus:ring-orange-400 transition-all duration-300"
-                  required
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-white/60 hover:text-white"
-                >
-                  {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                </button>
-              </div>
-            </div>
-
-            <div className="space-y-2">
-              <Label htmlFor="confirmPassword" className="text-white">Confirm Password *</Label>
-              <div className="relative">
-                <Input
-                  id="confirmPassword"
-                  type={showConfirmPassword ? "text" : "password"}
-                  value={formData.confirmPassword}
-                  onChange={(e) => handleInputChange("confirmPassword", e.target.value)}
-                  placeholder="Confirm Password"
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/50 pr-10 focus:ring-2 focus:ring-orange-400 transition-all duration-300"
-                  required
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-white/60 hover:text-white"
-                >
-                  {showConfirmPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                </button>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-4">
-              <Button 
-                type="submit"
-                className="bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-white"
               >
-                Register
-              </Button>
-              <Link to="/login">
-                <Button 
-                  type="button" 
-                  variant="outline" 
-                  className="w-full bg-white/20 border-white/40 text-white hover:bg-white/30 hover:border-white/60 font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
-                >
-                  Login
-                </Button>
-              </Link>
+                {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+              </button>
             </div>
-          </form>
+          </div>
+
+          <div className="space-y-2">
+            <Label htmlFor="confirmPassword" className="text-white">Confirm Password *</Label>
+            <div className="relative">
+              <Input
+                id="confirmPassword"
+                type={showConfirmPassword ? "text" : "password"}
+                className="bg-slate-700/50 border-slate-600/50 text-white placeholder:text-slate-400 pr-10 focus:ring-2 focus:ring-orange-400"
+                placeholder="Confirm your password"
+                required
+              />
+              <button
+                type="button"
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-white"
+              >
+                {showConfirmPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+              </button>
+            </div>
+          </div>
+
+          <div className="flex items-start space-x-2">
+            <Checkbox id="terms" className="mt-1" />
+            <Label htmlFor="terms" className="text-blue-200 text-sm leading-relaxed">
+              I agree to the <span className="text-orange-400 underline cursor-pointer">Terms of Service</span> and <span className="text-orange-400 underline cursor-pointer">Privacy Policy</span>
+            </Label>
+          </div>
+
+          <Button className="w-full bg-gradient-to-r from-orange-400 to-orange-600 hover:from-orange-500 hover:to-orange-700 text-white font-semibold shadow-lg hover:shadow-xl transition-all duration-300 mt-6">
+            Create Account
+          </Button>
+
+          <div className="text-center">
+            <p className="text-blue-200 text-sm">
+              Already have an account?{" "}
+              <Link to="/login" className="text-orange-400 hover:text-orange-300 underline">
+                Sign in here
+              </Link>
+            </p>
+          </div>
         </CardContent>
       </Card>
 

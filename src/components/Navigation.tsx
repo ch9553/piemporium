@@ -18,10 +18,10 @@ const Navigation = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-4 hover:scale-105 transition-transform duration-300">
-            <div className="bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 rounded-xl p-4 shadow-2xl border border-orange-300/20">
-              <span className="text-white font-bold text-4xl drop-shadow-lg block leading-none" style={{ fontFamily: 'Times New Roman, serif' }}>π</span>
+            <div className="bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 rounded-lg p-3 shadow-2xl border border-orange-400/30">
+              <span className="text-white font-bold text-3xl drop-shadow-lg block leading-none" style={{ fontFamily: 'Times New Roman, serif' }}>π</span>
             </div>
-            <span className="text-3xl font-bold bg-gradient-to-r from-slate-100 via-slate-50 to-slate-200 bg-clip-text text-transparent tracking-wide" 
+            <span className="text-3xl font-bold bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent tracking-wide" 
                   style={{ fontFamily: 'Playfair Display, serif', fontWeight: '700' }}>EMPORIUM</span>
           </Link>
           
@@ -41,7 +41,7 @@ const Navigation = () => {
               </Link>
             ))}
             <Link to="/">
-              <Button variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20 hover:border-white/50 ml-4 font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button variant="outline" className="bg-slate-800/50 border-orange-400/50 text-orange-300 hover:bg-orange-500/20 hover:border-orange-400 ml-4 font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
                 Log out
               </Button>
             </Link>

@@ -41,10 +41,10 @@ const Login = () => {
       <div className="absolute top-0 left-0 right-0 border-b border-white/10 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-4 hover:scale-105 transition-transform duration-300">
-            <div className="bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 rounded-xl p-4 shadow-2xl border border-orange-300/20">
-              <span className="text-white font-bold text-4xl drop-shadow-lg block leading-none" style={{ fontFamily: 'Times New Roman, serif' }}>π</span>
+            <div className="bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 rounded-lg p-3 shadow-2xl border border-orange-400/30">
+              <span className="text-white font-bold text-3xl drop-shadow-lg block leading-none" style={{ fontFamily: 'Times New Roman, serif' }}>π</span>
             </div>
-            <span className="text-3xl font-bold bg-gradient-to-r from-slate-100 via-slate-50 to-slate-200 bg-clip-text text-transparent tracking-wide" 
+            <span className="text-3xl font-bold bg-gradient-to-r from-orange-400 via-orange-500 to-orange-600 bg-clip-text text-transparent tracking-wide" 
                   style={{ fontFamily: 'Playfair Display, serif', fontWeight: '700' }}>EMPORIUM</span>
           </Link>
           <div className="flex items-center space-x-4">
@@ -58,7 +58,7 @@ const Login = () => {
         </div>
       </div>
 
-      <Card className="w-full max-w-md bg-white/10 border-white/20 backdrop-blur-md shadow-2xl animate-fade-in">
+      <Card className="w-full max-w-md bg-slate-800/30 border-slate-700/50 backdrop-blur-md shadow-2xl animate-fade-in">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl text-white">Welcome Back</CardTitle>
           <p className="text-blue-200">Sign in to your account</p>
@@ -77,7 +77,7 @@ const Login = () => {
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:ring-2 focus:ring-orange-400 transition-all duration-300"
+                className="bg-slate-700/50 border-slate-600/50 text-white placeholder:text-slate-400 focus:ring-2 focus:ring-orange-400 transition-all duration-300"
                 placeholder="demo@piemporium.com"
                 required
               />
@@ -91,14 +91,14 @@ const Login = () => {
                   type={showPassword ? "text" : "password"}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="bg-white/10 border-white/20 text-white placeholder:text-white/50 pr-10 focus:ring-2 focus:ring-orange-400 transition-all duration-300"
+                  className="bg-slate-700/50 border-slate-600/50 text-white placeholder:text-slate-400 pr-10 focus:ring-2 focus:ring-orange-400 transition-all duration-300"
                   placeholder="demo123"
                   required
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-white/60 hover:text-white"
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-white"
                 >
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                 </button>
@@ -121,7 +121,7 @@ const Login = () => {
                 <Button 
                   type="button" 
                   variant="outline" 
-                  className="w-full bg-white/20 border-white/40 text-white hover:bg-white/30 hover:border-white/60 font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="w-full bg-slate-700/50 border-slate-600/50 text-white hover:bg-slate-600/50 hover:border-slate-500/50 font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   Register
                 </Button>

@@ -41,12 +41,12 @@ const Exchange = () => {
           <div className="flex items-center justify-between mb-6">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center shadow-lg">
+                <div className="w-12 h-12 bg-gradient-to-r from-orange-400 to-orange-600 rounded-lg flex items-center justify-center shadow-lg">
                   <span className="text-white font-bold text-xl">π</span>
                 </div>
                 <div>
                   <h1 className="text-4xl font-bold text-white">USD/PI</h1>
-                  <p className="text-blue-200">Professional Trading Exchange</p>
+                  <p className="text-blue-300">Professional Trading Exchange</p>
                 </div>
               </div>
             </div>
@@ -58,51 +58,51 @@ const Exchange = () => {
           
           {/* Enhanced Market Stats */}
           <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
-            <Card className="bg-gradient-to-br from-green-500/10 to-green-600/20 border-green-400/30 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300">
+            <Card className="bg-gradient-to-br from-slate-800/50 to-slate-700/50 border-green-400/30 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300">
               <CardContent className="p-4 text-center">
                 <div className="flex items-center justify-center mb-2">
                   <DollarSign className="w-5 h-5 text-green-400 mr-1" />
-                  <p className="text-green-200 text-sm font-medium">Last Price</p>
+                  <p className="text-green-300 text-sm font-medium">Last Price</p>
                 </div>
                 <p className="text-xl font-bold text-green-400">{marketStats.lastPrice}</p>
               </CardContent>
             </Card>
             
-            <Card className="bg-gradient-to-br from-red-500/10 to-red-600/20 border-red-400/30 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300">
+            <Card className="bg-gradient-to-br from-slate-800/50 to-slate-700/50 border-red-400/30 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300">
               <CardContent className="p-4 text-center">
-                <p className="text-red-200 text-sm font-medium mb-2">24h Low</p>
+                <p className="text-red-300 text-sm font-medium mb-2">24h Low</p>
                 <p className="text-lg font-bold text-red-400">{marketStats.low24h}</p>
               </CardContent>
             </Card>
             
-            <Card className="bg-gradient-to-br from-green-500/10 to-green-600/20 border-green-400/30 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300">
+            <Card className="bg-gradient-to-br from-slate-800/50 to-slate-700/50 border-green-400/30 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300">
               <CardContent className="p-4 text-center">
-                <p className="text-green-200 text-sm font-medium mb-2">24h High</p>
+                <p className="text-green-300 text-sm font-medium mb-2">24h High</p>
                 <p className="text-lg font-bold text-green-400">{marketStats.high24h}</p>
               </CardContent>
             </Card>
             
-            <Card className="bg-gradient-to-br from-blue-500/10 to-blue-600/20 border-blue-400/30 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300">
+            <Card className="bg-gradient-to-br from-slate-800/50 to-slate-700/50 border-blue-400/30 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300">
               <CardContent className="p-4 text-center">
                 <div className="flex items-center justify-center mb-2">
                   <Activity className="w-4 h-4 text-blue-400 mr-1" />
-                  <p className="text-blue-200 text-sm font-medium">24h Volume</p>
+                  <p className="text-blue-300 text-sm font-medium">24h Volume</p>
                 </div>
                 <p className="text-lg font-bold text-blue-400">{marketStats.volume24h}</p>
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-br from-purple-500/10 to-purple-600/20 border-purple-400/30 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300">
+            <Card className="bg-gradient-to-br from-slate-800/50 to-slate-700/50 border-purple-400/30 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300">
               <CardContent className="p-4 text-center">
-                <p className="text-purple-200 text-sm font-medium mb-2">Total Pi</p>
+                <p className="text-purple-300 text-sm font-medium mb-2">Total Pi</p>
                 <p className="text-lg font-bold text-purple-400">{marketStats.totalPi}</p>
               </CardContent>
             </Card>
 
-            <Card className="bg-gradient-to-br from-orange-500/10 to-orange-600/20 border-orange-400/30 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105">
+            <Card className="bg-gradient-to-br from-slate-800/50 to-slate-700/50 border-orange-400/30 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer hover:scale-105">
               <CardContent className="p-4 text-center">
                 <BarChart3 className="w-8 h-8 text-orange-400 mx-auto mb-1" />
-                <p className="text-orange-200 text-xs font-medium">Advanced Chart</p>
+                <p className="text-orange-300 text-xs font-medium">Advanced Chart</p>
               </CardContent>
             </Card>
           </div>
@@ -112,8 +112,8 @@ const Exchange = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Enhanced Trading Panel */}
           <div className="lg:col-span-1 space-y-6">
-            <Card className="bg-white/5 border-white/20 backdrop-blur-sm shadow-xl">
-              <CardHeader className="border-b border-white/10">
+            <Card className="bg-slate-800/30 border-slate-700/50 backdrop-blur-sm shadow-xl">
+              <CardHeader className="border-b border-slate-700/50">
                 <CardTitle className="text-white flex items-center">
                   <Zap className="w-5 h-5 mr-2" />
                   Instant Trading
@@ -121,7 +121,7 @@ const Exchange = () => {
               </CardHeader>
               <CardContent className="p-6">
                 <Tabs defaultValue="buy" className="w-full">
-                  <TabsList className="grid w-full grid-cols-2 bg-white/10 mb-6">
+                  <TabsList className="grid w-full grid-cols-2 bg-slate-700/50 mb-6">
                     <TabsTrigger value="buy" className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-green-500 data-[state=active]:to-green-600 data-[state=active]:text-white">
                       Buy Pi
                     </TabsTrigger>
@@ -137,12 +137,12 @@ const Exchange = () => {
                         value={buyAmount}
                         onChange={(e) => setBuyAmount(e.target.value)}
                         placeholder="Enter USD amount"
-                        className="bg-white/10 border-white/20 text-white text-lg h-12 focus:ring-2 focus:ring-green-400"
+                        className="bg-slate-700/50 border-slate-600/50 text-white text-lg h-12 focus:ring-2 focus:ring-green-400"
                       />
                     </div>
                     <div className="bg-green-500/10 p-4 rounded-lg border border-green-400/20">
                       <div className="flex justify-between items-center">
-                        <span className="text-green-200">You will receive:</span>
+                        <span className="text-green-300">You will receive:</span>
                         <span className="text-2xl font-bold text-green-400">
                           {buyAmount ? (parseFloat(buyAmount || "0") / 0.5).toFixed(4) : "0"} π
                         </span>
@@ -164,12 +164,12 @@ const Exchange = () => {
                         value={sellAmount}
                         onChange={(e) => setSellAmount(e.target.value)}
                         placeholder="Enter Pi amount"
-                        className="bg-white/10 border-white/20 text-white text-lg h-12 focus:ring-2 focus:ring-red-400"
+                        className="bg-slate-700/50 border-slate-600/50 text-white text-lg h-12 focus:ring-2 focus:ring-red-400"
                       />
                     </div>
                     <div className="bg-red-500/10 p-4 rounded-lg border border-red-400/20">
                       <div className="flex justify-between items-center">
-                        <span className="text-red-200">You will receive:</span>
+                        <span className="text-red-300">You will receive:</span>
                         <span className="text-2xl font-bold text-red-400">
                           ${sellAmount ? (parseFloat(sellAmount || "0") * 0.5).toFixed(2) : "0.00"} USD
                         </span>
@@ -188,8 +188,8 @@ const Exchange = () => {
             </Card>
 
             {/* Enhanced Balance Summary */}
-            <Card className="bg-white/5 border-white/20 backdrop-blur-sm shadow-xl">
-              <CardHeader className="border-b border-white/10">
+            <Card className="bg-slate-800/30 border-slate-700/50 backdrop-blur-sm shadow-xl">
+              <CardHeader className="border-b border-slate-700/50">
                 <CardTitle className="text-white text-lg flex items-center">
                   <Target className="w-5 h-5 mr-2" />
                   Account Balances
@@ -199,16 +199,16 @@ const Exchange = () => {
                 <div className="flex justify-between items-center p-3 bg-green-500/10 rounded-lg border border-green-400/20">
                   <div className="flex items-center space-x-3">
                     <DollarSign className="w-6 h-6 text-green-400" />
-                    <span className="text-green-200 font-medium">USD Balance</span>
+                    <span className="text-green-300 font-medium">USD Balance</span>
                   </div>
                   <span className="text-white font-bold text-xl">$5,000.00</span>
                 </div>
                 <div className="flex justify-between items-center p-3 bg-orange-500/10 rounded-lg border border-orange-400/20">
                   <div className="flex items-center space-x-3">
-                    <div className="w-6 h-6 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center">
+                    <div className="w-6 h-6 bg-gradient-to-r from-orange-400 to-orange-600 rounded-lg flex items-center justify-center">
                       <span className="text-white font-bold text-sm">π</span>
                     </div>
-                    <span className="text-orange-200 font-medium">Pi Balance</span>
+                    <span className="text-orange-300 font-medium">Pi Balance</span>
                   </div>
                   <span className="text-white font-bold text-xl">5,000.0000</span>
                 </div>
@@ -218,8 +218,8 @@ const Exchange = () => {
 
           {/* Enhanced Trading Activity */}
           <div className="lg:col-span-2">
-            <Card className="bg-white/5 border-white/20 backdrop-blur-sm shadow-xl h-full">
-              <CardHeader className="border-b border-white/10">
+            <Card className="bg-slate-800/30 border-slate-700/50 backdrop-blur-sm shadow-xl h-full">
+              <CardHeader className="border-b border-slate-700/50">
                 <div className="flex items-center justify-between">
                   <CardTitle className="text-white flex items-center">
                     <Activity className="w-5 h-5 mr-2" />
@@ -234,7 +234,7 @@ const Exchange = () => {
                         onClick={() => setSelectedTimeframe(timeframe)}
                         className={selectedTimeframe === timeframe 
                           ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg" 
-                          : "text-blue-200 hover:text-white hover:bg-white/10"
+                          : "text-blue-300 hover:text-white hover:bg-slate-700/50"
                         }
                       >
                         {timeframe}
@@ -245,15 +245,15 @@ const Exchange = () => {
               </CardHeader>
               <CardContent className="p-0">
                 <div className="space-y-0">
-                  <div className="grid grid-cols-4 gap-4 p-4 text-sm font-semibold text-blue-200 border-b border-white/10 bg-white/5">
+                  <div className="grid grid-cols-4 gap-4 p-4 text-sm font-semibold text-blue-300 border-b border-slate-700/50 bg-slate-700/20">
                     <span>Time</span>
                     <span>Price (USD)</span>
                     <span>Amount (Pi)</span>
                     <span>Type</span>
                   </div>
                   {recentTrades.map((trade, index) => (
-                    <div key={index} className="grid grid-cols-4 gap-4 p-4 text-sm hover:bg-white/5 transition-colors border-b border-white/5 last:border-b-0">
-                      <span className="text-blue-200 font-medium">{trade.time}</span>
+                    <div key={index} className="grid grid-cols-4 gap-4 p-4 text-sm hover:bg-slate-700/20 transition-colors border-b border-slate-700/30 last:border-b-0">
+                      <span className="text-blue-300 font-medium">{trade.time}</span>
                       <span className="text-white font-bold text-lg">{trade.price}</span>
                       <span className="text-white font-medium">{trade.amount}</span>
                       <div className="flex items-center">
