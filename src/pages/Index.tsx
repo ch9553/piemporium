@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRight, Shield, Wallet, TrendingUp } from "lucide-react";
@@ -10,12 +9,12 @@ const Index = () => {
       {/* Header */}
       <header className="border-b border-white/10 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-3 hover:scale-105 transition-transform duration-300">
-            <div className="w-12 h-12 bg-gradient-to-r from-orange-400 to-orange-600 rounded-full flex items-center justify-center shadow-lg">
-              <span className="text-white font-bold text-2xl drop-shadow-lg" style={{ fontFamily: 'Times New Roman, serif' }}>π</span>
+          <div className="flex items-center space-x-4 hover:scale-105 transition-transform duration-300">
+            <div className="bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 rounded-2xl p-3 shadow-2xl border border-orange-300/20">
+              <span className="text-white font-bold text-3xl drop-shadow-lg block leading-none" style={{ fontFamily: 'Times New Roman, serif' }}>π</span>
             </div>
-            <span className="text-2xl font-bold bg-gradient-to-r from-orange-400 via-amber-400 to-orange-500 bg-clip-text text-transparent" 
-                  style={{ fontFamily: 'Playfair Display, serif' }}>PIEMPORIUM</span>
+            <span className="text-3xl font-bold bg-gradient-to-r from-slate-100 via-slate-50 to-slate-200 bg-clip-text text-transparent tracking-wide" 
+                  style={{ fontFamily: 'Playfair Display, serif', fontWeight: '700' }}>EMPORIUM</span>
           </div>
           <div className="flex items-center space-x-4">
             <Link to="/login">
