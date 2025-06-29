@@ -17,9 +17,9 @@ const Navigation = () => {
     <header className="border-b border-white/10 backdrop-blur-sm bg-slate-900/50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/dashboard" className="flex items-center space-x-4 hover:scale-105 transition-transform duration-300">
-            <div className="bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 rounded-2xl p-3 shadow-2xl border border-orange-300/20">
-              <span className="text-white font-bold text-3xl drop-shadow-lg block leading-none" style={{ fontFamily: 'Times New Roman, serif' }}>π</span>
+          <Link to="/" className="flex items-center space-x-4 hover:scale-105 transition-transform duration-300">
+            <div className="bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 rounded-xl p-4 shadow-2xl border border-orange-300/20">
+              <span className="text-white font-bold text-4xl drop-shadow-lg block leading-none" style={{ fontFamily: 'Times New Roman, serif' }}>π</span>
             </div>
             <span className="text-3xl font-bold bg-gradient-to-r from-slate-100 via-slate-50 to-slate-200 bg-clip-text text-transparent tracking-wide" 
                   style={{ fontFamily: 'Playfair Display, serif', fontWeight: '700' }}>EMPORIUM</span>

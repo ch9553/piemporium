@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -35,7 +34,7 @@ const Register = () => {
     if (formData.username && formData.password) {
       toast({
         title: "Registration Successful",
-        description: "Welcome to Piemporium!",
+        description: "Welcome to EMPORIUM!",
       });
       navigate("/dashboard");
     }
@@ -51,15 +50,15 @@ const Register = () => {
       <div className="absolute top-0 left-0 right-0 border-b border-white/10 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-4 hover:scale-105 transition-transform duration-300">
-            <div className="bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 rounded-2xl p-3 shadow-2xl border border-orange-300/20">
-              <span className="text-white font-bold text-3xl drop-shadow-lg block leading-none" style={{ fontFamily: 'Times New Roman, serif' }}>π</span>
+            <div className="bg-gradient-to-br from-orange-400 via-orange-500 to-orange-600 rounded-xl p-4 shadow-2xl border border-orange-300/20">
+              <span className="text-white font-bold text-4xl drop-shadow-lg block leading-none" style={{ fontFamily: 'Times New Roman, serif' }}>π</span>
             </div>
             <span className="text-3xl font-bold bg-gradient-to-r from-slate-100 via-slate-50 to-slate-200 bg-clip-text text-transparent tracking-wide" 
                   style={{ fontFamily: 'Playfair Display, serif', fontWeight: '700' }}>EMPORIUM</span>
           </Link>
           <div className="flex items-center space-x-4">
             <Link to="/login">
-              <Button variant="outline" className="bg-white/10 border-white/30 text-white hover:bg-white/20 hover:border-white/50 font-semibold transition-all duration-300">
+              <Button variant="outline" className="bg-white/20 border-white/40 text-white hover:bg-white/30 hover:border-white/60 font-semibold transition-all duration-300">
                 Login
               </Button>
             </Link>
@@ -70,7 +69,7 @@ const Register = () => {
 
       <Card className="w-full max-w-md bg-white/10 border-white/20 backdrop-blur-md shadow-2xl animate-fade-in">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl text-white">Join Piemporium</CardTitle>
+          <CardTitle className="text-2xl text-white">Join EMPORIUM</CardTitle>
           <p className="text-blue-200">Create your trading account</p>
         </CardHeader>
         <CardContent className="space-y-6">
@@ -152,7 +151,7 @@ const Register = () => {
                 <Button 
                   type="button" 
                   variant="outline" 
-                  className="w-full bg-white/10 border-white/30 text-white hover:bg-white/20 hover:border-white/50 font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="w-full bg-white/20 border-white/40 text-white hover:bg-white/30 hover:border-white/60 font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                 >
                   Login
                 </Button>
@@ -165,7 +164,7 @@ const Register = () => {
       <footer className="absolute bottom-0 left-0 right-0 py-4">
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
           <span className="text-blue-300">Trade Fee 0.1%</span>
-          <span className="text-blue-300">Copyright© - Piemporium</span>
+          <span className="text-blue-300">Copyright© - EMPORIUM</span>
         </div>
       </footer>
     </div>
